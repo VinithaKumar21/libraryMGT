@@ -1,0 +1,27 @@
+ALTER TABLE users ADD usertype VARCHAR(255) AFTER email;
+
+php artisan make:middleware AdminMiddleware
+
+
+CREATE TABLE books(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+
+CREATE TABLE books (
+    id int NOT NULL,
+    book_title varchar(500) NOT NULL,
+    author_name varchar(1000) NOT NULL,
+    isbn_number int(11) DEFAULT NULL,
+    PRIMARY KEY (id)
+);
+
+
+php artisan make:migration create_books_table
+
+
+php artisan make:model Models\Book
